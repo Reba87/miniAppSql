@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleBoot.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   
+    <title>Bootcamp</title>
+</head>
+
+<body class="body">
+    <section class="containerH" id="home">
+        <div class="menu">
+            <nav class="nav">
+                <ul class="ul">
+                    <li class="li">
+                        <a href="#home" class="a">Home</a>
+                    </li>
+                    <li class="li">
+                        <a href="#containerStud" class="a">Students</a>
+                    </li>                    
+                    <li class="li">
+                        <a href="#marks" class="a">Marks</a>
+                    </li>
+                    <li class="li">
+                        <a href="#teacher" class="a">Information</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <article class="cards">
+            <div class="cardEst">
+                <div class="iconS">
+                    <img src="./recursos/study.png" class="icon" />
+                    <p class="txtH">
+                        Bienvenido, si quieres darte de alta como estudiante o quieres
+                        consultar tus datos desde aquí podrás hacerlo.
+                    </p>
+                    <a class="btn_btn" id="btnStud" href="#containerStud"> Students </a>
+                </div>
+            </div>
+            
+            <div class="cardMar">
+                <div class="iconS">
+                    <img src="./recursos/mark.png" class="icon" />
+                    <p class="txtH">
+                        Bienvenido profesor aquí puedes publicar tus notas o si eres
+                        estudiante podrás consultar las tuyas o de tus compañeros.
+                    </p>
+                    <a  href="#marks" class="btn_btn" id="btnStud"> Marks </a>
+                </div>
+            </div>
+            <div class="cardTea">
+                <div class="iconS">
+                    <img src="./recursos/average.png" class="icon" />
+                    <p class="txtA">
+                        Bienvenido profesores y alumnas, consultar toda la
+                        información sobre las materias que están dando o las notas.
+                        
+                    </p>
+                    <a class="btn_btn" id="btnStud" href="#teacher"> Information </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- SECCION ESTUDIANTES -->
+    <section class="containerStud" id="containerStud">
+        <article class="inputs">
+            <h1 class="titleEstud">STUDENTS</h1>
+            <input type="text" id="firts_nameStud" class="input" placeholder="Name" />
+            <input type="text" id="last_nameStud" class="input" placeholder="Last Name" />
+            <input type="text" id="grupo_idStud" class="input" placeholder="Grupo ID" />
+            <input type="date" id="admission_dateStud" min="2022-01-01" class="input" placeholder="Admission Date" />
+            <input type="number" id="students_id" min="1" class="input" placeholder="Student ID number/only to modify or delete" />
+
+            <div class="botons">
+                <button type="button" class="btn-btn" onclick="postStud()">
+                    Añadir
+                </button>
+                <button type="button" class="btn-btn" onclick="putStud()">
+                    Modificar
+                </button>
+                <button type="button" class="btn-btn" onclick="deleteStud()">
+                    Eliminar
+                </button>
+            </div>
+        </article>
+
+        <article class="mostrarStud">
+            <div class="tab">
+                <table class="tablaStud" id="tablaStud"></table>
+            </div>
+
+            <div class="getStu">
+                <input type="number" class="inputG" id="getIdStud" placeholder="Student ID number" />
+                <button type="button" class="btn-btnG" onclick="getStud()">
+                    Mostrar
+                </button>
+            </div>
+        </article>
+    </section>
+
+
+    <!-- SECCION MARKS -->
+    <section class="marks" id="marks">
+
+        <article class="inputsMarks">
+            <h1 class="titleMarks">MARKS</h1>
+            <input type="text" id="studen_id" class="inputMarks" placeholder="Studen ID" />
+            <input type="text" id="subject_id" class="inputMarks" placeholder="Subject ID" />
+            <input type="date" id="dateMark" class="inputMarks" placeholder="Date" />
+            <input type="number" id="mark" class="inputMarks" placeholder="Mark" />
+            <input type="number" id="idMarks" class="inputMarks" placeholder="ID Mark/only to modify or delete" />
+
+            <div class="botons">
+                <button type="button" class="btn-btn" onclick="postMarks()">
+                    ADD
+                </button>
+                <button type="button" class="btn-btn" onclick="putMarks()">
+                    Modify
+                </button>
+                <button type="button" class="btn-btn" onclick="deleteMarks()">
+                    Delete
+                </button>
+            </div>
+        </article>
+
+        <article class="mostrarMarks">
+            <div class="tab">
+                <table class="tablaMarks" id="tablaMarks"></table>
+            </div>
+
+            <div class="getMarks">
+                <input type="number" class="inputG" id="getIdMarks" placeholder="Student ID Number" />
+                <button type="button" class="btn-btnG" onclick="getMarks()">
+                    Show
+                </button>
+                <button type="button" class="btn-btnG" onclick="getMedia()">
+                    Average
+                </button>
+            </div>
+        </article>
+    </section>
+
+<!-- SECCION PROFESORES -->
+<section class="teacher" id="teacher">
+
+    <article class="inputsTeach">
+        <h1 class="titleTeach">INFORMATION</h1>
+        
+        <input type="number" id="idInfo" class="inputTeach" placeholder="Indicate ID to consult" />
+
+        <div class="botons">
+            <button type="button" class="btn-btn" onclick="GetMedia()">
+                Average
+            </button>
+            <button type="button" class="btn-btn" onclick="Getapunta()">
+                Target subject
+            </button>
+            <button type="button" class="btn-btn" onclick="GetImparti()">
+                Subject taught
+            </button>
+        </div>
+    </article>
+
+    <article class="mostrarTeach">
+        <div class="tab">
+            <table class="tablaTeach" id="tablaInfo"></table>
+        </div>      
+    </article>
+</section>
+
+
+    <div id = "toast" class="toast position-fixed top-0 end-0 p-3 align-items-center text-white border-0 mt=100px" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div id ="toastText" class="toast-body">
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+
+    <script src="./fetch.js"></script>
+
+    
+
+</body>
+
+</html>
