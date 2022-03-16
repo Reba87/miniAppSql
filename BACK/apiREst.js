@@ -241,9 +241,9 @@ function(request, response){
     let sql;
 
     if (request.query.id == null){
-        sql = "SELECT AVG(mark) FROM marks"
+        sql = "SELECT AVG(mark) AS average FROM marks"
     } else
-        sql ="SELECT AVG(mark),student_id FROM marks WHERE subject_id =" + request.query.id;
+        sql ="SELECT AVG(mark) AS average,student_id FROM marks WHERE subject_id =" + request.query.id;
 
         conection.query(sql, function(err,result)
      {

@@ -121,7 +121,7 @@ function postStud()
 }
 
 function putStud(){  
-let nota = new marks (
+let estudiante = new student (
     document.getElementById("firts_nameStud").value,
     document.getElementById("last_nameStud").value,
     document.getElementById("grupo_idStud").value,
@@ -129,17 +129,17 @@ let nota = new marks (
 
 let id = document.getElementById("students_id").value
 
-if(students.firts_name == ""){
-    students.firts_name = null
+if(estudiante.firts_name == ""){
+    estudiante.firts_name = null
 }
-if(students.last_name == ""){
-    students.last_name = null
+if(estudiante.last_name == ""){
+    estudiante.last_name = null
 }
-if(students.grupo_id == ""){
-    students.grupo_id = null
+if(estudiante.grupo_id == ""){
+    estudiante.grupo_id = null
 }
-if(students.admission_date == ""){
-    students.admission_date = null
+if(estudiante.admission_date == ""){
+    estudiante.admission_date = null
 }
     
    console.log(document.getElementById("students_id").value)
@@ -149,7 +149,7 @@ if(students.admission_date == ""){
             let param =
             {
                 headers: {"Content-type": "application/json; charset= UTF-8"},
-                body: JSON.stringify(students),
+                body: JSON.stringify(estudiante),
                 method: "PUT"
             }
         
@@ -489,7 +489,7 @@ function GetMedia(){
             {
               mostrar.innerHTML +=`<tr>
                                
-                                <td>${average.mark}</td>
+                                <td>${average.average}</td>
                                 <td>${average.student_id}</td>
                                                 
                                 </tr>`
